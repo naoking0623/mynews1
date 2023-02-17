@@ -31,8 +31,10 @@ use App\Http\Controllers\Admin\ProfileController;
 Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('profile/create', 'add')->name('profile.add');
     Route::post('profile/create', 'create')->name('profile.create');
-    Route::get('profile/edit', 'edit')->name('profile.updata');
+    Route::get('profile', 'index')->name('profile.index');
+    Route::get('profile/edit', 'edit')->name('profile.edit');
     Route::post('profile/edit', 'update')->name('profile.update');
+    Route::get('profile/delete', 'delete')->name('profile.delete');
 });
 
 Auth::routes();
